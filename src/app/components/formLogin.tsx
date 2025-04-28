@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useUser } from "../../context/userContext";
 
-export default function FormularioLogin() {
+export default function FormLogin() {
   const [usuario, setUsuario] = useState("");
   const [contrasena, setContrasena] = useState("");
   const [error, setError] = useState("");
@@ -42,27 +42,27 @@ export default function FormularioLogin() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-4 max-w-md mx-auto">
-      <input
-        type="text"
-        placeholder="Usuario"
-        value={usuario}
-        onChange={(e) => setUsuario(e.target.value)}
-        className="p-2 border rounded"
-        required
-      />
-      <input
-        type="password"
-        placeholder="Contraseña"
-        value={contrasena}
-        onChange={(e) => setContrasena(e.target.value)}
-        className="p-2 border rounded"
-        required
-      />
-      {error && <p className="text-red-500">{error}</p>}
-      <button type="submit" className="p-2 bg-blue-600 text-white rounded hover:bg-blue-700">
-        Iniciar sesión
-      </button>
-    </form>
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4 max-w-md mx-auto">
+          <input
+            type="text"
+            placeholder="Usuario"
+            value={usuario}
+            onChange={(e) => setUsuario(e.target.value)}
+            className="p-2 border rounded"
+            required
+          />
+          <input
+            type="password"
+            placeholder="Contraseña"
+            value={contrasena}
+            onChange={(e) => setContrasena(e.target.value)}
+            className="p-2 border rounded"
+            required
+          />
+          {error && <p className="text-red-500">{error}</p>}
+          <button type="submit" className="p-2 bg-cyan-600 text-white rounded-lg hover:bg-cyan-700">
+            Iniciar sesión
+          </button>
+        </form>
   );
 }
